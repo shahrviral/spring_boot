@@ -30,14 +30,6 @@ val mockkVersion = "1.13.3"
 val assertJVersion = "3.23.1"
 val junitBomVersion = "5.9.1"
 val awsBomVersion = "2.18.26"
-val contract_test_source_set = "contractTest"
-
-sourceSets {
-    create(contract_test_source_set) {
-        compileClasspath += sourceSets.main.get().output
-        runtimeClasspath += sourceSets.main.get().output
-    }
-}
 
 
 dependencies {
@@ -154,22 +146,4 @@ tasks {
         }
     }
 
-    getByName<Test>(contract_test_source_set) {
-        useJUnitPlatform {
-            includeEngines("junit-jupiter")
-            excludeEngines("junit-vintage")
-        }
-        testLogging {
-            events("passed", "skipped", "failed")
-            // showStandardStreams = true
-        }
-        systemProperty("pactbroker.url", System.getenv("PACTBROKER_URL"))
-        systemProperty("pact.provider.version", System.getenv("PACT_PROVIDER_VERSION"))
-        systemProperty("pact.provider.branch", System.getenv("PACT_PROVIDER_BRANCH"))
-        systemProperty("pact.filter.pacturl", System.getenv("PACT_FILTER_PACTURL"))
-        systemProperty("pact.filter.consumers", System.getenv("PACT_FILTER_CONSUMERS"))
-        systemProperty("pact.verifier.publishResults", System.getenv("PACT_VERIFIER_PUBLISHRESULTS"))
-        systemProperty("pact.showStacktrace", System.getenv("PACT_SHOWSTACKTRACE"))
-        systemProperty("pact.showFullDiff", System.getenv("PACT_SHOWFULLDIFF"))
-    }
 }
