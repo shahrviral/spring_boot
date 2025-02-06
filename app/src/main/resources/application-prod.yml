@@ -1,0 +1,13 @@
+datasource:
+  default:
+    url: r2dbc:postgresql://samplepostgres.com:5432/sampledb
+    username: override_me
+    password: override_me
+  write:
+    url: r2dbc:postgresql://samplepostgres.com:5432/sampledb
+    username: override_me
+    password: override_me
+app:
+  environment: 'PROD'
+amazon:
+  sample-queue: https://sqs.us-west-2.amazonaws.com/12345678987765/sample_queue.fifo

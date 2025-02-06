@@ -1,0 +1,18 @@
+### Launch Batch Processing Task
+http://localhost:8080/launch
+
+### Launch Single Task
+http://localhost:8080/launch/single
+
+### Get Info
+http://localhost:8080/info
+
+### Get Health
+http://localhost:8080/health
+
+
+### Get Prometheus Metrics
+http://localhost:8080/prometheus
+
+
+

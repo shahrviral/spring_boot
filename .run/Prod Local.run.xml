@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Prod Local" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" show_console_on_std_err="true" show_console_on_std_out="true">
+    <option name="ACTIVE_PROFILES" value="prod,prod-local,local" />
+    <envs>
+      <env name="AWS_PROFILE" value="core" />
+    </envs>
+    <output_file path="$PROJECT_DIR$/app/output.log" is_save="true" />
+    <module name="spring_boot.app.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="me.viralshah..Application" />
+    <option name="VM_PARAMETERS" value="-Duser.timezone=&quot;UTC&quot;" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,62 @@
+## App Config
+app:
+  environment: override_me
+  featureName: override_me
+
+datasource:
+  default:
+    url: override_me
+    username: override_me
+    password: override_me
+  write:
+    url: override_me
+    username: override_me
+    password: override_me
+
+## Spring
+spring:
+  main:
+    banner-mode: "off"
+  security:
+    user:
+      name: override_me
+      password: override_me
+basicAuth:
+  enabled: false
+## Spring Actuator Configs
+
+management:
+  health:
+    r2dbc:
+      enabled: false
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/"
+  info:
+    git:
+      mode: full
+## Info Endpoint
+info.app.name: app
+info.app.description: This is a sample service
+## Server Config
+server:
+  port: 8080
+## RestTemplate Configs
+webclient:
+  timeout: 5000
+## Logging
+logging.level.me.viralshah.app: DEBUG
+logging.level.com.amazonaws.auth.profile.internal.BasicProfileConfigLoader: ERROR
+
+## Amazon Configs
+amazon:
+  endpoint: 'https://sqs.us-west-2.amazonaws.com'
+  waitTime: 20
+  pollingConcurrencyLimit: 1
+  processingConcurrencyLimit: 2
+  sample-queue: override_me
